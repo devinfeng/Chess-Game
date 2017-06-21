@@ -1,0 +1,15 @@
+MessageProtocol.S2C_PlayCardReply --> CurCardPlayer
+codeId : 104 牌的数量不正确
+	 105 多张牌大小不相同
+	 106 出的牌比上一张小
+	 110 超时提示
+
+MessageProtocol.S2C_NoticeNextSendReply --> CurCardPlayer
+codeId : 1   提示玩家出牌
+	 2   提示庄家需要一起出牌
+
+MessageProtocol.S2C_SetEndCardNumReply --> SetCardNum
+
+MessageProtocol.S2C_NoticePlayerScoreReply --> NoticeScore
+
+MessageProtocol.S2C_RefreshCardsReply --> PlayCards

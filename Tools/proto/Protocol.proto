@@ -1,0 +1,54 @@
+
+enum CardType{
+        HeiTao=0;
+        HongTao=1;
+        MeiHua=2;
+	FangKuai=3;
+	PowerW=4;
+	SmallW=5;
+}
+
+message CardInfo{
+	required int32 num = 1;
+	required CardType type = 2; 
+	required int32 weight = 3;
+}
+
+// 游戏开始推送房间信息
+message RoomInfo{
+	required int32 roomID = 1;
+	required string roomName = 2;
+	repeated PlayCards playerList = 3;
+}
+
+// msgID  玩家请求出牌
+message PlayCards{
+	required int32 id = 1;
+	repeated CardInfo cards = 2;
+}
+
+// 通知当前出牌玩家信息
+message CurCardPlayer{
+	required int32 id = 1;
+	required int32 codeId = 2;
+}
+
+// 通知玩家得分
+message NoticeScore{
+	required int32 id = 1;
+	required int32 score = 2;
+}
+
+// 通知玩家将要换牌
+message NoticeChangeCard{
+	required int32 id = 1;
+	required int32 num = 2;
+	repeated CardInfo cards = 3;
+}
+
+// 请求设置出牌张数
+message SetCardNum{
+	required int32 id = 1;
+	required int32 num = 2;
+}
+
